@@ -23,9 +23,12 @@
     "egg": "^2.15.1",
     "egg-scripts": "^2.11.0",
     "egg-sequelize": "^5.2.1",
+    "egg-validate": "^2.0.2",
     "mysql2": "^2.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
     "egg-bin": "^4.11.0",
@@ -33,10 +36,8 @@
     "egg-mock": "^3.21.0",
     "eslint": "^5.13.0",
     "eslint-config-egg": "^7.1.0",
-    "sequelize-cli": "^5.5.1",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "husky": "^4.2.3"
+    "husky": "^4.2.3",
+    "sequelize-cli": "^5.5.1"
   },
   "husky": {
     "hooks": {
