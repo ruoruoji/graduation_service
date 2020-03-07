@@ -20,7 +20,7 @@ module.exports = appInfo => {
     dialect: 'mysql',
     host: '127.0.0.1',
     port: 3306,
-    database: 'project',
+    database: 'graduation',
   };
 
   // add your middleware config here
