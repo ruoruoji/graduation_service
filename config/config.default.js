@@ -24,11 +24,13 @@ module.exports = appInfo => {
   };
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['errorHandler'];
 
   // add your user config here
   const userConfig = {
-    // myAppName: 'egg',
+    errorHandler: {
+      match: '/api',
+    },
   };
 
   return {
