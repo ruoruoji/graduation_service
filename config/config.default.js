@@ -13,7 +13,7 @@ module.exports = appInfo => {
   const config = (exports = {});
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1582190936522_626';
+  config.keys = appInfo.name + '_17356535320_867149076';
 
   // mysql
   config.sequelize = {
