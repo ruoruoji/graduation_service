@@ -26,11 +26,11 @@ module.exports = appInfo => {
   };
 
   // add your middleware config here
-  config.middleware = ['errorHandler'];
+  config.middleware = ['outputHandler'];
 
   // add your user config here
   const userConfig = {
-    errorHandler: {
+    outputHandler: {
       match: '/api',
     },
   };
