@@ -22,7 +22,12 @@ module.exports = appInfo => {
     port: 3306,
     database: 'graduation',
     username: 'root',
-    password: '867149'
+    password: '867149',
+    define: {
+      freezeTableName: true,
+      createdAt: 'created_at',
+      updatedAt: 'updated_at'
+    }
   };
 
   // add your middleware config here
