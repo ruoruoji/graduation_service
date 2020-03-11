@@ -8,14 +8,14 @@ module.exports = app => {
     account: { type: STRING(10), allowNull: false, unique: true },
     password: { type: STRING(30), allowNull: false },
     created_at: DATE,
-    updated_at: DATE,
+    updated_at: DATE
   });
 
   Users.findByAccount = async account => {
     return await Users.findOne({
       where: {
-        account,
-      },
+        account
+      }
     });
   };
 

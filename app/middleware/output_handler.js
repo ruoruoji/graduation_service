@@ -27,7 +27,7 @@ module.exports = () => {
       ctx.body = {
         status,
         response,
-        error,
+        error
       };
     }
   };

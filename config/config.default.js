@@ -22,7 +22,7 @@ module.exports = appInfo => {
     port: 3306,
     database: 'graduation',
     username: 'root',
-    password: '867149',
+    password: '867149'
   };
 
   // add your middleware config here
@@ -31,12 +31,12 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     outputHandler: {
-      match: '/api',
-    },
+      match: '/api'
+    }
   };
 
   return {
     ...config,
-    ...userConfig,
+    ...userConfig
   };
 };
