@@ -13,7 +13,7 @@ class UsersController extends Controller {
     const ctx = this.ctx;
     const query = {
       limit: toInt(ctx.query.limit),
-      offset: toInt(ctx.query.offset),
+      offset: toInt(ctx.query.offset)
     };
     ctx.body = await ctx.model.Users.findAll(query);
   }
@@ -34,7 +34,7 @@ class UsersController extends Controller {
       ctx.body = user;
     } catch (error) {
       ctx.status = 409;
-      ctx.error = '工号已经存在';
+      ctx.error = '工号已经存在，请指定正确工号';
     }
   }
 
@@ -44,8 +44,14 @@ class UsersController extends Controller {
     const user = await ctx.model.Users.findByAccount(account);
 
     if (!user) {
-      ctx.status = 404;
-      ctx.error = '请输入正确工号';
+      ctx.status = 409;
+      ctx.error = '工号不存在，请指定正确工号';
+      return;
+    }
+
+    if (account === user.account && password === user.account) {
+      ctx.status = 409;
+      ctx.error = '并无实际更新信息';
       return;
     }
 
@@ -58,8 +64,8 @@ class UsersController extends Controller {
     const account = ctx.params.id;
     const user = await ctx.model.Users.findByAccount(account);
     if (!user) {
-      ctx.status = 404;
-      ctx.error = '请输入正确工号';
+      ctx.status = 409;
+      ctx.error = '工号并不存在，请指定正确工号';
       return;
     }
 
