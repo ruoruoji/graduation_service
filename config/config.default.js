@@ -27,6 +27,15 @@ module.exports = appInfo => {
       freezeTableName: true,
       createdAt: 'created_at',
       updatedAt: 'updated_at'
+    },
+    timezone: '+08:00', // for writing  to database
+    dialectOptions: {
+      typeCast(field, next) { // for reading  from database with original value
+        if (field.type === 'DATETIME') {
+          return field.string();
+        }
+        return next();
+      }
     }
   };
 
